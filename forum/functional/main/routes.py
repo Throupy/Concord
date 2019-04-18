@@ -12,3 +12,7 @@ def home():
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page,
                                                                   per_page=4)
     return render_template("home.html", posts=posts)
+
+@main.route("/settings")
+def settings():
+    return render_template("settings.html")
